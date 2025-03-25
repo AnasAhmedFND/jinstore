@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+
+@theme {
+    --color-primary: f5f;
+
+    --background-lucal: f5f;
+
+}

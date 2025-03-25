@@ -20,7 +20,7 @@ const Nevbar = () => {
             <p className='text-[12px]'>Deliver to <br /> <span className='font-bold'>all</span> </p>
         </div>
 
-        <div className="border w-[55%] py-2 rounded-md px-2  flex justify-between items-center ">
+        <div className="border bg-[#F3F4F6] w-[55%] py-2 rounded-md px-2  flex justify-between items-center ">
         <input className='outline-none w-[80%] ' type="search" placeholder='Search for products categories or brands...' />
         <p><FiSearch className='text-xl' /></p>
         </div>
