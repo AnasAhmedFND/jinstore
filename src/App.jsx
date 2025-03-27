@@ -1,5 +1,6 @@
 
 import './App.css'
+import './index.css'
 import {  createBrowserRouter, createRoutesFromElements, Route, RouterProvider,} from "react-router-dom";
 import Routlayout from './Components/Routlayout';
 import Home from './Pages/Home';

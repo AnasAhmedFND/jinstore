@@ -6,4 +6,10 @@
 
     --background-lucal: f5f;
 
+    
 }
+@extend {
+    --background:{
+     'unick':'#DB4444'
+    }
+}       
