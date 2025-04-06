@@ -1,19 +1,38 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BiCategory } from "react-icons/bi";
 import Weekend from './img_home/weekend.png'
 import He_fruits from './img_home/fruits.jpg'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import Slider from "react-slick";
+import { apiData } from '../Context_API/ContextApi';
 
 const Hero = () => {
+  // Api Data........................................................//
+  const data =useContext(apiData)
 
+  // category style show arrow icon......................................//
   let [categories, setCategories] = useState(false)
 
   let hendeleCategory = () => {
     setCategories(!categories)
 
   }
+
+  // Category Product show & category items filter. ........................
+  // let [categoryProduct, setCategoryProduct] = useState([])
+  // const hendelCategoryItem = (index) => {
+  //   let filterProduct = data.filter((item) => item.category == index)
+  //   setCategoryProduct(filterProduct)
+  // };
+
+
+  // Category items show .................................
+  let [cat, setCat] = useState([])
+   useEffect(() => {
+    setCat([...new Set(data.map((item) => item.category)) ])
+
+   }, [data]) 
 
   return (
     <section className='container mx-auto flex  justify-between  border '>
@@ -25,10 +44,17 @@ const Hero = () => {
           </div>
 
           <div className="text-xl ">
-            <p> {categories === true ?  <IoIosArrowDown /> : <MdKeyboardArrowRight /> }  </p>
+            <p> {categories === true ? <IoIosArrowDown /> : <MdKeyboardArrowRight />}  </p>
 
           </div>
         </div>
+
+        <ul className='overflow-y-scroll h-[260px] '>
+            {cat.map((item) => 
+            <li className='cursor-pointer border-b py-1 pl-2' >{item} </li>
+            )}
+         
+        </ul>
 
       </div>
 
