@@ -3,25 +3,30 @@ import { BiCategory } from "react-icons/bi";
 import Weekend from './img_home/weekend.png'
 import He_fruits from './img_home/fruits.jpg'
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 import Slider from "react-slick";
 
 const Hero = () => {
 
+  let [categories, setCategories] = useState(false)
 
+  let hendeleCategory = () => {
+    setCategories(!categories)
 
-
+  }
 
   return (
     <section className='container mx-auto flex  justify-between  border '>
-      <div className=" w-[28%] border  px-2">
-        <div className="flex justify-between h-[30px] border items-center ">
+      <div className=" w-[28%] ">
+        <div onClick={hendeleCategory} className="flex justify-between h-[30px] border-b items-center px-2">
           <div className="flex items-center gap-2 font-bold ">
             <p><BiCategory className='text-xl ' /></p>
             <p>All Categories</p>
           </div>
 
           <div className="text-xl ">
-            <p><MdKeyboardArrowRight /></p>
+            <p> {categories === true ?  <IoIosArrowDown /> : <MdKeyboardArrowRight /> }  </p>
+
           </div>
         </div>
 
@@ -29,7 +34,7 @@ const Hero = () => {
 
 
 
-      <div className="w-[70%] flex border  pl-5 justify-between bg-[#e5e7eb] ">
+      <div className="w-[70%] flex   pl-5 justify-between bg-[#e5e7eb] ">
         <div className=" mt-10 pb-5">
           <img src={Weekend} alt="" />
           <h1 className='font-bold text-3xl '>Get the best quality <br /> products at the lowest <br />prices</h1>

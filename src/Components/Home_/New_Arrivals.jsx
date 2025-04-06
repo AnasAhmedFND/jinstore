@@ -11,6 +11,7 @@ const New_Arrivals = () => {
   
   return (
    <section className='container mx-auto border py-10 flex flex-wrap justify-between gap-5 '>
+   
 
     {filter.map((item) => (
     <div className="border w-[230px] p-2 relative rounded-xl">
