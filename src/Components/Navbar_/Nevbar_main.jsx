@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Nevbar_main = () => {
   return (
@@ -6,7 +7,9 @@ const Nevbar_main = () => {
         <ul className='flex items-center w-[55%] justify-between font-bold  '>
             <li className=' cursor-pointer'>
                 <select className='outline-none items-center cursor-pointer' name="page" id="home">
-                    <option className='' value="home">Home</option>
+                   
+                    <option className='' value="home">  <Link to='/' >Home</Link>  </option>
+                    
                     <option value="home_2">Home_2</option>
                     <option value="home_3">Home_3</option>
                 </select>
