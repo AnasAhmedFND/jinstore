@@ -10,7 +10,7 @@ const New_Arrivals = () => {
   let filter =info.filter((item) => item.id >= 20 && item.id <= 23)
   
   return (
-   <section className='container mx-auto border py-10 flex flex-wrap justify-between gap-5 '>
+   <section className='container mx-auto  pb-10 flex flex-wrap justify-between gap-5 '>
    
 
     {filter.map((item) => (

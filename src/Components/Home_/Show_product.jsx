@@ -8,7 +8,7 @@ import F2 from './img_home/f2.jpg'
 
 const Show_product = () => {
   return (
-   <section className='container mx-auto py-10 border flex justify-between  '>
+   <section className='container mx-auto py-10  flex justify-between  '>
     <div className="flex w-[32%] pl-2 bg-[#E6E9E7] rounded-md h-[180px] ">
         <div className="w-1/2 pb-2">
             <p className='text-red-500 mt-5 text-[12px] '>Only This Week</p>
