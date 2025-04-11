@@ -7,6 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import Slider from "react-slick";
 import { apiData } from '../Context_API/ContextApi';
 
+
 const Hero = () => {
   // Api Data........................................................//
   const data = useContext(apiData)
@@ -34,6 +35,9 @@ const Hero = () => {
   }
 
   // let filterCatItemsProduct =data.filter((item) => item.id >= 20 && item.id <= 23)
+
+  // React slick........................................
+ 
 
 
 
@@ -64,6 +68,7 @@ const Hero = () => {
 
       <div className="w-[70%]">
         {categoryItems.length == 0 ?
+
 
           <div className=" flex   pl-5 justify-between bg-[#e5e7eb] ">
 
