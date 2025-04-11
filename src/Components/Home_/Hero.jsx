@@ -56,10 +56,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <ul className='overflow-y-scroll h-[260px] '>
-          {cat.map((item) =>
-            <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2' >{item} </li>
-          )}
+        <ul className=' '>
+          {categories === true ? 
+          <div className="overflow-y-scroll h-[260px]">
+            {cat.map((item) =>
+              <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2' >{item} </li>
+            )}
+
+          </div>
+          :
+
+          <div className="">
+
+          </div>
+
+          
+        }
 
         </ul>
 
@@ -104,7 +116,9 @@ const Hero = () => {
 
             ))}
 
-          </div>
+          </div>       
+
+
 
         }
 
