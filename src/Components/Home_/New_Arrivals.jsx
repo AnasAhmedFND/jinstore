@@ -10,11 +10,11 @@ const New_Arrivals = () => {
   let filter =info.filter((item) => item.id >= 20 && item.id <= 23)
   
   return (
-   <section className='container mx-auto  pb-10 flex flex-wrap justify-between gap-5 '>
+   <section className='container mx-auto  pb-10 flex flex-wrap justify-between gap-5 md:px-0 px-2 '>
    
 
     {filter.map((item) => (
-    <div className="border w-[230px] p-2 relative rounded-xl">
+    <div className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
         <img className='w-[300px] ' src={item.thumbnail} alt="" />
         <p className='font-bold '> </p>

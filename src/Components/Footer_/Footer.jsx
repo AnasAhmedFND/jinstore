@@ -13,9 +13,9 @@ import Visa from './img_footer/visa.png'
 
 const Footer = () => {
   return (
-    <section className='bg-[#F3F4F6] py-10 '>
+    <section className='bg-[#F3F4F6] md:py-10 py-5 md:px-0 px-2'>
       <div className="container mx-auto  ">
-      <div className="flex border-b pt-5 pb-8 justify-between">
+      <div className="md:flex border-b pt-5 pb-8 justify-between">
 
         <div className="">
           <h5 className='font-bold '>Join our newsletter for £10 offs</h5>
@@ -33,7 +33,7 @@ const Footer = () => {
 
       </div>
 
-      <div className="flex justify-between gap-5 text-[14px] py-10 ">
+      <div className="md:flex justify-between gap-5 text-[14px] md:py-10 py-2 ">
 
         <div className=" ">
           <h4 className='font-bold '>Do You Need Help ?</h4>
@@ -124,7 +124,7 @@ const Footer = () => {
 
       </div>
 
-      <div className=" border-t pt-10 flex justify-between ">
+      <div className=" border-t md:pt-10 pt-2 md:flex justify-between ">
         <div className="">
           <p className='text-[10px] '>Copyright 2024 © Jinstore WooCommerce WordPress Theme. All right reserved. Powered by <span className='font-bold'> BlackRise Themes.</span> </p>
           <div className="flex gap-2 ">

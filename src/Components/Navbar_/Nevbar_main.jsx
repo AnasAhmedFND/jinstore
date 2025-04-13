@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Nevbar_main = () => {
   return (
-    <section className='container mx-auto  py-4 flex justify-between '>
-        <ul className='flex items-center w-[55%] justify-between font-bold  '>
-            <li className=' cursor-pointer'>
-                <select className='outline-none items-center cursor-pointer' name="page" id="home">
+    <section className='container mx-auto  py-4  '>
+        <div className="md:flex justify-between  md:border-t-0 border-t md:bg-white bg-yellow-500 md:w-full w-[60%] md:px-0 px-2 md:pb-0 pb-4">
+        <ul className='md:flex items-center md:gap-0  w-[55%] justify-between font-bold  '>
+            <li className=' cursor-pointer  '>
+                <select className='outline-none items-center cursor-pointer position relative md:right-0 right-1 md:w-[80px] w-[200px] ' name="page" id="home">
                    
                     <option className='' value="home">  <Link to='/' >Home</Link>  </option>
                     
@@ -22,9 +23,11 @@ const Nevbar_main = () => {
             
         </ul>
 
-        <div className="flex items-center gap-4 font-bold  w-[35%] justify-end ">
+        <div className="md:flex items-center gap-4 font-bold  md:w-[35%] md:justify-end  md:mt-0 mt-2 md:border-t-0 border-t ">
             <h6>Trending Products</h6>
-            <h6 className='text-red-500'>Almost Finished <span className='bg-red-500 text-white p-1 rounded-sm ml-2'>SALE </span> </h6>
+            <h6 className='text-red-500 flex items-center'>Almost Finished <span className='bg-red-500 text-white p-1 rounded-sm ml-2'>SALE </span> </h6>
+        </div>
+
         </div>
 
 

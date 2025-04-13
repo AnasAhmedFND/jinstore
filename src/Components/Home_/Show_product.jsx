@@ -8,8 +8,8 @@ import F2 from './img_home/f2.jpg'
 
 const Show_product = () => {
   return (
-   <section className='container mx-auto py-10  flex justify-between  '>
-    <div className="flex w-[32%] pl-2 bg-[#E6E9E7] rounded-md h-[180px] ">
+   <section className='container mx-auto md:py-10 py-5  md:flex  justify-between md:px-0 px-2  '>
+    <div className="flex md:w-[32%] w-full pl-2 bg-[#E6E9E7] rounded-md h-[180px] ">
         <div className="w-1/2 pb-2">
             <p className='text-red-500 mt-5 text-[12px] '>Only This Week</p>
             <h3 className='font-bold '>Quality eggs at an affordable price  </h3>
@@ -21,7 +21,7 @@ const Show_product = () => {
         </div>
     </div>
 
-    <div className="flex w-[32%] pl-2 bg-[#E6E9E7] rounded-md h-[180px] ">
+    <div className="flex md:w-[32%] w-full pl-2 bg-[#E6E9E7] rounded-md h-[180px] md:mt-0 mt-2 ">
         <div className="w-1/2 pb-2">
             <p className='text-red-500 mt-5 text-[12px] '>Only This Week</p>
             <h3 className='font-bold '>Quality eggs at an affordable price  </h3>
@@ -33,7 +33,7 @@ const Show_product = () => {
         </div>
     </div>
 
-    <div className="flex w-[32%] pl-2 bg-[#E6E9E7] rounded-md h-[180px] ">
+    <div className="flex md:w-[32%] w-full pl-2 bg-[#E6E9E7] rounded-md h-[180px] md:mt-0 mt-2 ">
         <div className="w-1/2 pb-2">
             <p className='text-red-500 mt-5 text-[12px] '>Only This Week</p>
             <h3 className='font-bold '>Quality eggs at an affordable price  </h3>
