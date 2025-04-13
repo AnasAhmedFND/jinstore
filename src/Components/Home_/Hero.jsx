@@ -101,7 +101,7 @@ const Hero = () => {
 
           :
 
-          <div className="flex flex-wrap overflow-y-scroll h-[300px] gap-2">
+          <div className="flex flex-wrap overflow-y-scroll h-[300px] gap-2 py-2">
 
             {categoryItems.map((item) => (
               <div className="border w-[200px] p-2 relative rounded-xl">
