@@ -11,7 +11,10 @@ import Firesmith from './img_home/656.png'
 import Box from './img_home/641.png'
 import Babyfood from './img_home/babyfood.jpg'
 import Cupcak from './img_home/Cupcac.jpg'
+import Persent from './img_home/persent.png'
 import { FaLongArrowAltRight } from "react-icons/fa";
+import MyVideo from './video/free-video.mp4'
+import FoodVideo from './video/food-tab.mp4'
 
 
 
@@ -20,7 +23,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 const Featured = () => {
     return (
         <section className='container mx-auto py-5'>
-            <div className="flex gap-3 items-center ">
+            <div className="flex gap-3 items-center h-14 bg-linear-60 from-yellow-500 to-pink-500 rounded-sm px-2">
                 <h2 className='font-bold text-lg'>Featured Products </h2>
                 <p className='text-[12px] '>Do not miss the current offers until the end of March.</p>
             </div>
@@ -153,6 +156,21 @@ const Featured = () => {
                     <img className='w-1/2 h-[180px]  ' src={Cupcak} alt="" />
                 </div>
             </div>
+            <div className="flex justify-between ">
+                <video className='w-[280px] h-[180px] '  controls>
+                    <source src={MyVideo} type="video/mp4" />
+                </video>
+
+                <video className='w-[280px] h-[180px]  ' controls >
+                    <source src={FoodVideo} type='video/mp4' />
+                </video>                
+               
+            </div>
+
+            <div className="pt-5">
+                <img src={Persent} alt="" />
+            </div>
+
         </section>
     )
 }
