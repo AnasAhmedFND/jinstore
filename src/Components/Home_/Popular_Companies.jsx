@@ -5,15 +5,15 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Popular_Companies = () => {
   return (
-    <section className='container mx-auto'>
-      <div className="flex justify-between  py-4">
-        <h6 className='text-[12px] flex gap-4 items-center'><span className='font-bold text-xl'>Popular Companies </span>Some of the new products arriving this weeks </h6>
-        <button className='border px-4 py-2 rounded-full flex items-center gap-2' >View All <FaLongArrowAltRight /></button>
+    <section className='container mx-auto pb-5'>
+      <div className="md:flex justify-between  py-4">
+        <h6 className='text-[12px] md:flex gap-2 md:items-center'><span className='font-bold text-xl'>Popular Companies </span> <br className='md:not-[]:' /> <span className=' md:mb-0 mb-2'>Some of the new products arriving this weeks </span>  </h6>
+        <button className='border px-4 md:py-2 rounded-full flex items-center gap-2 md:mt-0 mt-2 ' >View All <FaLongArrowAltRight /></button>
       </div>
 
-      <div className="border flex justify-between rounded-xl ">
-      <div className="border-r w-[250px] px-2 py-4 ">
-        <div className="flex  gap-5">
+      <div className="border md:flex md:flex-row flex flex-wrap col-span-2  justify-between rounded-xl ">
+      <div className="border-r md:w-[250px] w-1/2  px-2 py-4 ">
+        <div className="flex  md:gap-5">
           <img src={Pimg} alt="" />
           <div className="">
             <h4 className='font-bold text-xl '>Machic</h4>
@@ -26,8 +26,8 @@ const Popular_Companies = () => {
         
       </div>
 
-      <div className="border-r w-[250px] px-2 py-4">
-        <div className="flex  gap-5">
+      <div className="md:border-r md:w-[250px] w-1/2  px-2 py-4">
+        <div className="flex md:gap-5">
           <img src={Pimg} alt="" />
           <div className="">
             <h4 className='font-bold text-xl '>Blonwe</h4>
@@ -40,8 +40,8 @@ const Popular_Companies = () => {
         
       </div>
 
-      <div className="border-r w-[250px] px-2 py-4">
-        <div className="flex  gap-5">
+      <div className="border-r md:w-[250px] w-1/2  px-2 py-4">
+        <div className="flex md:gap-5">
           <img src={Pimg} alt="" />
           <div className="">
             <h4 className='font-bold text-xl '>Bacola</h4>
@@ -54,8 +54,8 @@ const Popular_Companies = () => {
         
       </div>
 
-      <div className=" w-[250px] px-2 py-4">
-        <div className="flex  gap-5">
+      <div className=" md:w-[250px] w-1/2  px-2 py-4">
+        <div className="flex md:gap-5">
           <img src={Pimg} alt="" />
           <div className="">
             <h4 className='font-bold text-xl '>Medibazar</h4>

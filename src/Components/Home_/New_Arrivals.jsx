@@ -11,7 +11,7 @@ const New_Arrivals = () => {
   let filter = info.filter((item) => item.id >= 20 && item.id <= 23)
   
 
-
+// view all product............................................
   let [view, setView] = useState(true)
   const viewAllData = () => {   
     setView(!view)
