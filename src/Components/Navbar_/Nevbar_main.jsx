@@ -15,7 +15,7 @@ const Nevbar_main = () => {
                     <option value="home_3">Home_3</option>
                 </select>
             </li>
-            <li  className='cursor-pointer '>Shop</li>
+            <li  className='cursor-pointer '><Link to='/shop' >Shop</Link> </li>
             <li  className='cursor-pointer '>Fruits & Vegetables</li>
             <li  className='cursor-pointer '>Beverages</li>
             <li  className='cursor-pointer '>Blog</li>

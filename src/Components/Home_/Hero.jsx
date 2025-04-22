@@ -6,6 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import Slider from "react-slick";
 import { apiData } from '../Context_API/ContextApi';
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 
 const Hero = () => {
@@ -60,7 +61,7 @@ const Hero = () => {
           {categories === true ? 
           <div className="overflow-y-scroll h-[260px]">
             {cat.map((item) =>
-              <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2' >{item} </li>
+              <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2 flex items-center gap-2 ' ><IoIosCheckmarkCircle /> {item} </li>
             )}
 
           </div>

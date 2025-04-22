@@ -5,6 +5,7 @@ import {  createBrowserRouter, createRoutesFromElements, Route, RouterProvider,}
 import Routlayout from './Components/Routlayout';
 import Home from './Pages/Home';
 import Abouts from './Pages/Abouts';
+import Shops from './Pages/Shops';
 
 
 function App() {  
@@ -12,6 +13,7 @@ function App() {
     <Route element={<Routlayout />} >
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<Abouts />} />
+      <Route path='/shop' element={<Shops/> } />
 
 
     </Route>
