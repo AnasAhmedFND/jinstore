@@ -174,7 +174,9 @@ const Shop = () => {
 
                     :
 
+
                     <div className="flex flex-wrap gap-3 justify-between mt-2 ">
+
                         {category.map((item) => (
                             <div className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
                                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>

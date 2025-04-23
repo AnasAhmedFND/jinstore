@@ -31,7 +31,9 @@ const Nevbar = () => {
                     <p className='text-2xl cursor-pointer '><IoMdContact /></p>
                     <p className='text-[10px] cursor-pointer '>Sign In <br /> <span className='font-bold '>Account</span> </p>
                     <p className='text-xl cursor-pointer '><FaRegHeart /></p>
+                    <Link to='/cart' >
                     <p className='text-xl cursor-pointer '><TbShoppingCartCancel /></p>
+                    </Link>
                 </div>
             </div>
         </section>
