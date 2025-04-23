@@ -7,13 +7,13 @@ const Nevbar_main = () => {
         <div className="md:flex justify-between  md:border-t-0 border-t md:bg-white bg-yellow-500 md:w-full w-[60%] md:px-0 px-2 md:pb-0 pb-4">
         <ul className='md:flex items-center md:gap-0  w-[55%] justify-between font-bold  '>
             <li className=' cursor-pointer  '>
-                <select className='outline-none items-center cursor-pointer position relative md:right-0 right-1 md:w-[80px] w-[200px] ' name="page" id="home">
+            <Link to='/' >  <select className='outline-none items-center cursor-pointer position relative md:right-0 right-1 md:w-[80px] w-[200px] ' name="page" id="home">
                    
-                    <option className='' value="home">  <Link to='/' >Home</Link>  </option>
+                <option className='' value="home">  Home  </option>
                     
                     <option value="home_2">Home_2</option>
                     <option value="home_3">Home_3</option>
-                </select>
+                </select></Link>
             </li>
             <li  className='cursor-pointer '><Link to='/shop' >Shop</Link> </li>
             <li  className='cursor-pointer '>Fruits & Vegetables</li>

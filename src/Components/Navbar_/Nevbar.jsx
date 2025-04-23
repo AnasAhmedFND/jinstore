@@ -15,7 +15,9 @@ const Nevbar = () => {
                     <Link to='/' >
                         <img src={Jin} alt="" />
                     </Link>
+                    <Link to='/' >
                     <h3 className='text-2xl font-bold' >JinStore</h3>
+                    </Link>
                     <p className='text-2xl'><IoLocationOutline /></p>
                     <p className='text-[12px]'>Deliver to <br /> <span className='font-bold'>all</span> </p>
                 </div>
