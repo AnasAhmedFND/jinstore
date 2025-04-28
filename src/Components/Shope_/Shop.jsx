@@ -7,6 +7,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { TbCategory } from "react-icons/tb";
 import { SlList } from "react-icons/sl";
 import { MdOutlineStarPurple500 } from "react-icons/md";
+import Inst from './shop_img/squer_icon.jpg'
 
 
 const Shop = () => {
@@ -35,11 +36,19 @@ const Shop = () => {
 
     })
     // in stock....//////////////////////////////////////////////
-    let [stock, setStock] = useState()
+    let [stock, setStock] = useState(false)
     const hendeleInStock = (() => {
-
+        setStock(!stock)
 
     })
+
+    // on stock..................................................... 
+    let [stockOn, setStockOn] = useState(false)
+
+    const hendeleOnStock = ( () => {
+        setStockOn(!stockOn)
+
+    } )
 
 
 
@@ -87,11 +96,25 @@ const Shop = () => {
 
                         )}
                     </ul>
+
                 </div>
 
                 <p className='font-bold mt-2 border-t pt-4'>Product Status</p>
-                <p onClick={hendeleInStock} className='flex items-center gap-2 mt-2'><FaRegSquare /> In Stock</p>
-                <p className='flex items-center gap-2'><FaRegSquare /> On Sale</p>
+                <p onClick={hendeleInStock} className='flex items-center gap-2 mt-2'>
+                    {stock == 0 ?
+                        <FaRegSquare />
+                        :
+                        <img className='w-[20px] ' src={Inst} alt="" />
+                    }
+                    In Stock</p>
+                <p onClick={hendeleOnStock} className='flex items-center gap-2'>
+                    {stockOn == 0 ?
+                    <FaRegSquare />
+                    :
+                    <img className='w-[20px] ' src={Inst} alt="" />
+
+                    }
+                    On Sale</p>
 
 
             </div>
@@ -121,7 +144,7 @@ const Shop = () => {
                 </div>
 
                 {/* ata amon condition ja click corle kichu dekabe otherwise dekabena
-                (short-circuit Evaluation && ) ....................*/ }            
+                (short-circuit Evaluation && ) ....................*/ }
 
                 {category.length === 0 ?
                     <div className="">
@@ -168,7 +191,7 @@ const Shop = () => {
                             </div>
                         )}
 
-                        
+
 
                     </div>
 
