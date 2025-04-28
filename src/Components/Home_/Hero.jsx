@@ -38,7 +38,8 @@ const Hero = () => {
   // let filterCatItemsProduct =data.filter((item) => item.id >= 20 && item.id <= 23)
 
   // React slick........................................
- 
+
+
 
 
 
@@ -58,21 +59,21 @@ const Hero = () => {
         </div>
 
         <ul className=' '>
-          {categories === true ? 
-          <div className="overflow-y-scroll h-[260px]">
-            {cat.map((item) =>
-              <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2 flex items-center gap-2 ' ><IoIosCheckmarkCircle /> {item} </li>
-            )}
+          {categories === true ?
+            <div className="overflow-y-scroll h-[260px]">
+              {cat.map((item) =>
+                <li onClick={() => hendeleCategoryProducts(item)} className='cursor-pointer border-b py-1 pl-2 flex items-center gap-2 ' ><IoIosCheckmarkCircle /> {item} </li>
+              )}
 
-          </div>
-          :
+            </div>
+            :
 
-          <div className="">
+            <div className="">
 
-          </div>
+            </div>
 
-          
-        }
+
+          }
 
         </ul>
 
@@ -80,26 +81,25 @@ const Hero = () => {
 
 
       <div className="md:w-[70%]">
-        {categoryItems.length == 0 ?
+        {categoryItems.length == 0 ?                  
+             
+                <div className=" md:flex md:pl-5 justify-between bg-[#e5e7eb] border border-white ">
 
+                  <div className=" mt-10 pb-5 md:px-0 px-2">
+                    <img src={Weekend} alt="" />
+                    <h1 className='font-bold text-3xl '>Get the best quality <br /> products at the lowest <br />prices</h1>
+                    <p className='text-[13px] '>We have prepared special discounts for you on grocery <br /> products. Don't miss these opportunities... </p>
+                    <div className="mt-5 md:flex gap-4 ">
+                      <button className='border bg-[#310358f3] text-white rounded-sm  py-1 px-2 h-[40px]  '>Shop Now</button>
+                      <h4 className='bg-lucal  '> <span className='font-bold text-red-500 text-xl '>$27.99</span> <span className=' line-through'>$56.67</span>   <br /> Don't miss this limited time offer. </h4>
+                    </div>
+                  </div>
 
-          <div className=" md:flex md:pl-5 justify-between bg-[#e5e7eb] border border-white ">
-
-            <div className=" mt-10 pb-5 md:px-0 px-2">
-              <img src={Weekend} alt="" />
-              <h1 className='font-bold text-3xl '>Get the best quality <br /> products at the lowest <br />prices</h1>
-              <p className='text-[13px] '>We have prepared special discounts for you on grocery <br /> products. Don't miss these opportunities... </p>
-              <div className="mt-5 md:flex gap-4 ">
-                <button className='border bg-[#310358f3] text-white rounded-sm  py-1 px-2 h-[40px]  '>Shop Now</button>
-                <h4 className='bg-lucal  '> <span className='font-bold text-red-500 text-xl '>$27.99</span> <span className=' line-through'>$56.67</span>   <br /> Don't miss this limited time offer. </h4>
-              </div>
-            </div>
-
-            <div className=" ">
-              <img className='w-full h-full' src={He_fruits} alt="" />
-            </div>
-          </div>
-
+                  <div className=" ">
+                    <img className='w-full h-full' src={He_fruits} alt="" />
+                  </div>
+                </div>        
+                       
           :
 
           <div className="flex flex-wrap overflow-y-scroll h-[300px] gap-2 py-2">
@@ -117,7 +117,7 @@ const Hero = () => {
 
             ))}
 
-          </div>       
+          </div>
 
 
 

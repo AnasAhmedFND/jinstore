@@ -95,26 +95,38 @@ const Footer = () => {
         <div className="">
           <h4 className='font-bold '>Download our app</h4>
           <div className="mt-4 flex gap-3 ">
+            <a href="https://play.google.com/store/games?device" target='_blanck' rel='noopener noopener'>
             <img src={Playstore} alt="" />
+            </a>
             <p>Download App Get <br /> -10% Discount</p>
 
           </div>
 
           <div className="mt-2 flex gap-3">
+            <a href="https://www.apple.com/app-store/" target='_blanck' rel='noopener noopener'>
             <img src={App_store} alt="" />
+            </a>
             <p>Download App Get <br /> -20% Discount</p>
           </div>
 
           <p className='mt-10 font-bold '>Follow us on socisl media.</p>
 
           <div className="flex gap-2 mt-5">
+            <a href="https://www.facebook.com" target='_blanck' rel='noopener noopener'>
             <p className=' h-[30px] w-[30px]  bg-white  rounded-md flex justify-center items-center text-xl '><ImFacebook className='text-blue-700' /> </p>
+            </a>
 
+            <a href="https://twitter.com" target='_blanck' rel='noopener noopener'>
             <p className=' h-[30px] w-[30px]  bg-white rounded-md flex justify-center items-center text-xl '><FaTwitter /> </p>
+            </a>
 
+            <a href="https://www.instagram.com" target='_blanck' rel='noopener noopener'>
             <p className=' h-[30px] w-[30px]  bg-white rounded-md flex justify-center items-center text-xl '><FaInstagram className='text-red-700' /> </p>
+            </a>
 
+            <a href="https://www.linkedin.com" target='_blanck' rel='noopener noopener'>
             <p className=' h-[30px] w-[30px]  bg-white rounded-md flex justify-center items-center text-xl '><FaLinkedinIn className='text-blue-700' /> </p>
+            </a>
 
           </div>
 
