@@ -8,6 +8,8 @@ import { TbCategory } from "react-icons/tb";
 import { SlList } from "react-icons/sl";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import Inst from './shop_img/squer_icon.jpg'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../Slice_/cart_Slice';
 
 
 const Shop = () => {
@@ -49,6 +51,13 @@ const Shop = () => {
         setStockOn(!stockOn)
 
     } )
+    // add to cart slice...................................
+    let dispatch = useDispatch()
+
+    const hendeleAddToCart = (product) => {
+        dispatch(addToCart({...product, qty: 1}))        
+        
+    }
 
 
 
@@ -136,8 +145,8 @@ const Shop = () => {
                         <p>| Sort: <span className='font-bold mr-10'>Sort by latest</span>  </p>
                         <p>| show: <span className='font-bold mr-5'> 20 items </span></p>
                         <div className="flex items-center gap-2 font-bold text-xl">
-                            <p onClick={() => setSquer('squer')} className='border px-2 py-1 bg-[#c0dee6] rounded-md '><TbCategory /></p>
-                            <p onClick={() => setSquer('list')} className=' '><SlList /></p>
+                            <p onClick={() => setSquer('squer')} className='border px-2 py-1 bg-[#c0dee6] rounded-md cursor-pointer '><TbCategory /></p>
+                            <p onClick={() => setSquer('list')} className='cursor-pointer  '><SlList /></p>
 
                         </div>
                     </div>
@@ -152,14 +161,14 @@ const Shop = () => {
                         {squer === 'squer' &&
 
                             (<div className="flex flex-wrap gap-3 justify-between mt-2">
-                                {shopProductFilter.map((item) => (
-                                    <div className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
+                                {shopProductFilter.map((item, index) => (
+                                    <div key={index} className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
                                         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                         <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                         <p className='font-bold '>{item.title} </p>
                                         <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                                        <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+                                        <button onClick={()=> hendeleAddToCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart </button>
 
                                     </div>
 
@@ -171,16 +180,16 @@ const Shop = () => {
 
                         {squer === 'list' && (
                             <div className="mt-2">
-                                {shopProductFilter.map((item) => (
-                                    <div className="flex gap-2 border md:w-full md:h-[200px] w-[100px] p-2 relative mt-2 rounded-xl">
+                                {shopProductFilter.map((item, index) => (
+                                    <div key={index} className="flex gap-2 border md:w-full md:h-[200px] w-[100px] p-2 relative mt-2 rounded-xl">
                                         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                         <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                         <div className="">
                                             <p className='font-bold '>{item.title} </p>
                                             <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                             <p className='flex text-yellow-500 gap-1'><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /> </p>
-                                            <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                                            <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+                                            <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>                                            
+                                            <button onClick={()=> hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
 
                                         </div>
 
@@ -200,14 +209,15 @@ const Shop = () => {
 
                     <div className="flex flex-wrap gap-3 justify-between mt-2 ">
 
-                        {category.map((item) => (
-                            <div className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
+                        {category.map((item, index) => (
+                            <div key={index} className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
                                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                 <p className='font-bold '>{item.title} </p>
                                 <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                                <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+                                
+                                <button onClick={()=> hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
 
                             </div>
 
