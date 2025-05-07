@@ -4,6 +4,7 @@ import { apiData } from '../Context_API/ContextApi'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Slice_/cart_Slice';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -26,9 +27,10 @@ const New_Arrivals = () => {
   let dispatch = useDispatch()
 
   const hendeleAddCart = (product) => {
-    dispatch(addToCart({...product, qty: 1}))
+    dispatch(addToCart({ ...product, qty: 1 }))
+    toast.success('Added to cart')
   }
- 
+
 
 
 
@@ -41,23 +43,35 @@ const New_Arrivals = () => {
 
       {view ?
 
-        (            
-              <div className="flex flex-wrap justify-between gap-5">
-                {filter.map((item) => (
-                  <div className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
-                    <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
-                    <img className='w-[300px] ' src={item.thumbnail} alt="" />
-                    <p className='font-bold '> </p>
-                    <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                    <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>                    
-                    <button onClick={() => hendeleAddCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
+        (
+          <div className="flex flex-wrap justify-between gap-5">
+            {filter.map((item) => (
+              <div className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
+                <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
+                <img className='w-[300px] ' src={item.thumbnail} alt="" />
+                <p className='font-bold '> </p>
+                <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
+                <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
+                <ToastContainer
+                      position="top-center"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"                     
+                    />
 
-                  </div>
+              </div>
 
-                ))}
+            ))}
 
 
-              </div>                       
+          </div>
 
         )
 
@@ -71,7 +85,7 @@ const New_Arrivals = () => {
               <p className='font-bold '> </p>
               <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-              <button onClick={() => hendeleAddCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full  '>Add to cart</button>
+              <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full  '>Add to cart</button>
 
             </div>
 

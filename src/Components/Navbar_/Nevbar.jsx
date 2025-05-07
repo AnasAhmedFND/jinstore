@@ -9,6 +9,7 @@ import { FiSearch } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 
 const Nevbar = () => {
+    // Show Cart items value.....................................................
     let cartItemsValue = useSelector((state) => state.cartItemSlice.cartItems)
     
     
