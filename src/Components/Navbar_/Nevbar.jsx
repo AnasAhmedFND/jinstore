@@ -9,8 +9,8 @@ import { FiSearch } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 
 const Nevbar = () => {
-    let cartItemsValow = useSelector((state) => state.cartItemSlice.cartItems)
-    console.log(cartItemsValow.length);
+    let cartItemsValue = useSelector((state) => state.cartItemSlice.cartItems)
+    
     
     return (
         <section className='container mx-auto py-3 md:px-0 px-2 '>
@@ -42,7 +42,7 @@ const Nevbar = () => {
                     <Link to='/cart' >
                     <div className="relative ">
                     <p className='text-xl cursor-pointer '><TbShoppingCartCancel /></p>
-                    <p className='absolute bottom-[10px] left-[8px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center text-[12px] '>{cartItemsValow.length} </p>
+                    <p className='absolute bottom-[10px] left-[8px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center text-[12px] '>{cartItemsValue.length} </p>
 
                     </div>
                     </Link>
