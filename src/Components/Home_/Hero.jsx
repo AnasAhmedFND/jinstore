@@ -7,6 +7,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import Slider from "react-slick";
 import { apiData } from '../Context_API/ContextApi';
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Slice_/cart_Slice';
 
 
 const Hero = () => {
@@ -38,6 +40,12 @@ const Hero = () => {
   // let filterCatItemsProduct =data.filter((item) => item.id >= 20 && item.id <= 23)
 
   // React slick........................................
+
+  // Add to Cart..............................................................
+  let dispatch = useDispatch()
+  const hendeleAddToCart = (product) => {
+    dispatch(addToCart({...product, qty: 1}))
+  }
 
 
 
@@ -111,7 +119,7 @@ const Hero = () => {
                 <p className='font-bold '> </p>
                 <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+                <button onClick={() => hendeleAddToCart(item) } className='border rounded-full py-1 px-2 mt-2 w-full '>Add to cart</button>
 
               </div>
 

@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import Well from './img_home/well.png'
 import { apiData } from '../Context_API/ContextApi'
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Slice_/cart_Slice';
 
 
 
@@ -19,6 +21,13 @@ const New_Arrivals = () => {
   }
 
   // slick.....................................................
+
+  // Add to cart itmes..........................................
+  let dispatch = useDispatch()
+
+  const hendeleAddCart = (product) => {
+    dispatch(addToCart({...product, qty: 1}))
+  }
  
 
 
@@ -40,8 +49,8 @@ const New_Arrivals = () => {
                     <img className='w-[300px] ' src={item.thumbnail} alt="" />
                     <p className='font-bold '> </p>
                     <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                    <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                    <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+                    <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>                    
+                    <button onClick={() => hendeleAddCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
 
                   </div>
 
@@ -62,7 +71,7 @@ const New_Arrivals = () => {
               <p className='font-bold '> </p>
               <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-              <p className='border rounded-full py-1 px-2 mt-2'>Add to cart</p>
+              <button onClick={() => hendeleAddCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full  '>Add to cart</button>
 
             </div>
 
