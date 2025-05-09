@@ -47,16 +47,16 @@ const Shop = () => {
     // on stock..................................................... 
     let [stockOn, setStockOn] = useState(false)
 
-    const hendeleOnStock = ( () => {
+    const hendeleOnStock = (() => {
         setStockOn(!stockOn)
 
-    } )
+    })
     // add to cart slice...................................
     let dispatch = useDispatch()
 
     const hendeleAddToCart = (product) => {
-        dispatch(addToCart({...product, qty: 1}))        
-        
+        dispatch(addToCart({ ...product, qty: 1 }))
+
     }
 
 
@@ -65,8 +65,8 @@ const Shop = () => {
 
 
     return (
-        <section className='container mx-auto border-t py-4 flex justify-between  '>
-            <div className="w-[30%]  ">
+        <section className='container mx-auto border-t py-4 md:flex justify-between md:px-0 px-2 '>
+            <div className="md:w-[30%]  ">
                 <div className="flex gap-4">
                     <p className='flex items-center gap-2'>Home <IoIosArrowForward /></p>
                     <p className='font-bold '>Shop</p>
@@ -118,9 +118,9 @@ const Shop = () => {
                     In Stock</p>
                 <p onClick={hendeleOnStock} className='flex items-center gap-2'>
                     {stockOn == 0 ?
-                    <FaRegSquare />
-                    :
-                    <img className='w-[20px] ' src={Inst} alt="" />
+                        <FaRegSquare />
+                        :
+                        <img className='w-[20px] ' src={Inst} alt="" />
 
                     }
                     On Sale</p>
@@ -130,25 +130,28 @@ const Shop = () => {
 
             {/* Right........................................... */}
 
-            <div className="w-[68%]   ">
+            <div className="md:w-[68%]   ">
                 <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md '>Only This Week</p>
-                <h2 className='font-bold mt-4 text-3xl'>Grocery store with different <br /> treasures</h2>
+                <h2 className='font-bold mt-4 md:text-3xl text-2xl '>Grocery store with different <br /> treasures</h2>
                 <p className='mt-2'>We have prepared special discounts for you on grocery <br />
                     products...</p>
 
                 <button className='border px-5 py-2 rounded-full font-bold flex items-center gap-2 mt-4'>Shop Now <FaLongArrowAltRight /></button>
 
 
-                <div className="flex border justify-between py-2 px-2 items-center bg-linear-60 from-yellow-500 to-pink-500 mt-5 rounded-md">
-                    <p> Showing all 16 result</p>
-                    <div className="flex gap-4 items-center ">
-                        <p>| Sort: <span className='font-bold mr-10'>Sort by latest</span>  </p>
+                <div className="md:flex border justify-between py-2 px-2 items-center bg-linear-60 from-yellow-500 to-pink-500 mt-5 rounded-md">
+                    <div className="flex md:gap-10 items-center  gap-7  ">
+                        <p> Showing all 16 result</p>
+                        <p>| Sort: <span className='font-bold md:mr-10'>Sort by latest</span>  </p>
+                    </div>
+                    <div className="flex items-center gap-2 md:w-[300px] w-[326px] justify-between  md:mt-0 mt-2 ">
                         <p>| show: <span className='font-bold mr-5'> 20 items </span></p>
-                        <div className="flex items-center gap-2 font-bold text-xl">
+                        <div className="font-bold text-xl flex md:gap-4 gap-2 items-center">
                             <p onClick={() => setSquer('squer')} className='border px-2 py-1 bg-[#c0dee6] rounded-md cursor-pointer '><TbCategory /></p>
                             <p onClick={() => setSquer('list')} className='cursor-pointer  '><SlList /></p>
 
                         </div>
+
                     </div>
                 </div>
 
@@ -162,13 +165,13 @@ const Shop = () => {
 
                             (<div className="flex flex-wrap gap-3 justify-between mt-2">
                                 {shopProductFilter.map((item, index) => (
-                                    <div key={index} className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
+                                    <div key={index} className="border md:w-[164px] w-[163px] p-2 relative rounded-xl">
                                         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                         <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                         <p className='font-bold '>{item.title} </p>
                                         <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                                        <button onClick={()=> hendeleAddToCart(item) } className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart </button>
+                                        <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart </button>
 
                                     </div>
 
@@ -181,15 +184,18 @@ const Shop = () => {
                         {squer === 'list' && (
                             <div className="mt-2">
                                 {shopProductFilter.map((item, index) => (
-                                    <div key={index} className="flex gap-2 border md:w-full md:h-[200px] w-[100px] p-2 relative mt-2 rounded-xl">
+                                    <div key={index} className="flex md:gap-14 border w-full md:h-[200px]   p-2 relative mt-2 rounded-xl items-center ">
+                                        <div className="">
                                         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
-                                        <img className='w-[300px] ' src={item.thumbnail} alt="" />
+                                        <img className='md:w-[180px] w-[120px] ml-5 ' src={item.thumbnail} alt="" />
+
+                                        </div>
                                         <div className="">
                                             <p className='font-bold '>{item.title} </p>
                                             <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                             <p className='flex text-yellow-500 gap-1'><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /> </p>
-                                            <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>                                            
-                                            <button onClick={()=> hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
+                                            <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
+                                            <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-[150px] '>Add to cart</button>
 
                                         </div>
 
@@ -216,8 +222,8 @@ const Shop = () => {
                                 <p className='font-bold '>{item.title} </p>
                                 <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
-                                
-                                <button onClick={()=> hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
+
+                                <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
 
                             </div>
 
