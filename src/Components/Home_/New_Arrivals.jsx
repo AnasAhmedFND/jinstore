@@ -5,6 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Slice_/cart_Slice';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 
@@ -49,22 +50,27 @@ const New_Arrivals = () => {
               <div className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
-                <p className='font-bold '> </p>
-                <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+
+                <div className="flex justify-between">
+                  <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                  <Link to='/details' >
+                  <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
+                  </Link>
+                </div>
                 <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                 <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
                 <ToastContainer
-                      position="top-center"
-                      autoClose={1000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"                     
-                    />
+                  position="top-center"
+                  autoClose={1000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                />
 
               </div>
 
@@ -77,13 +83,17 @@ const New_Arrivals = () => {
 
         :
 
-        (<div className="flex flex-wrap justify-between gap-5 overflow-y-scroll h-[600px] ">
+        (<div className="flex flex-wrap justify-between md:gap-5 gap-2 overflow-y-scroll h-[600px] ">
           {info.map((item) => (
-            <div className="border md:w-[180px] w-[120px] p-2 relative rounded-xl">
+            <div className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
               <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
               <img className='w-[300px] ' src={item.thumbnail} alt="" />
-              <p className='font-bold '> </p>
+              
+              <div className="flex justify-between">
               <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+              <button className='border px-2 bg-linear-60 from-blue-500 to-pink-500 text-white rounded-2xl cursor-pointer '>View </button>
+
+              </div>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
               <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full  '>Add to cart</button>
 
