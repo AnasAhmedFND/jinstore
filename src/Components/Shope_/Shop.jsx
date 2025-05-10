@@ -216,14 +216,14 @@ const Shop = () => {
                     <div className="flex flex-wrap gap-3 justify-between mt-2 ">
 
                         {category.map((item, index) => (
-                            <div key={index} className="border md:w-[164px] w-[100px] p-2 relative rounded-xl">
+                            <div key={index} className="border md:w-[164px] w-[163px] p-2 relative rounded-xl">
                                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                 <p className='font-bold '>{item.title} </p>
                                 <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
 
-                                <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer '>Add to cart</button>
+                                <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
 
                             </div>
 
