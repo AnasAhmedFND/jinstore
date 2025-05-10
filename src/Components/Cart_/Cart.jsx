@@ -61,7 +61,7 @@ const Cart = () => {
 
                   <div className="">
                     <h6 className='font-bold '>Quantity</h6>
-                    <p className='mt-4 border flex justify-between '> <span className='bg-[#706570c5] px-2  '>-</span> <span className='bg-[#b0adc755] px-2 '>1 </span> <span className='bg-[#706570c5] px-2' >+</span> </p>
+                    <p className='mt-4 border flex justify-between '> <span className='bg-[#706570c5] px-2 cursor-pointer '>-</span> <span className='bg-[#b0adc755] px-2 '>1 </span> <span className='bg-[#706570c5] px-2 cursor-pointer ' >+</span> </p>
                   </div>
 
                   <div className="">

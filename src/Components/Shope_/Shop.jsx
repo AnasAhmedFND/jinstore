@@ -10,6 +10,7 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import Inst from './shop_img/squer_icon.jpg'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../Slice_/cart_Slice';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Shop = () => {
@@ -56,6 +57,7 @@ const Shop = () => {
 
     const hendeleAddToCart = (product) => {
         dispatch(addToCart({ ...product, qty: 1 }))
+        toast.success('Added to cart')
 
     }
 
@@ -172,6 +174,20 @@ const Shop = () => {
                                         <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                                         <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart </button>
+                                        <ToastContainer
+                                            position="top-center"
+                                            autoClose={1000}
+                                            hideProgressBar={false}
+                                            newestOnTop={false}
+                                            closeOnClick={false}
+                                            rtl={false}
+                                            pauseOnFocusLoss
+                                            draggable
+                                            pauseOnHover
+                                            theme="light"
+
+                                        />
+
 
                                     </div>
 
@@ -186,8 +202,8 @@ const Shop = () => {
                                 {shopProductFilter.map((item, index) => (
                                     <div key={index} className="flex md:gap-14 border w-full md:h-[200px]   p-2 relative mt-2 rounded-xl items-center ">
                                         <div className="">
-                                        <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
-                                        <img className='md:w-[180px] w-[120px] ml-5 ' src={item.thumbnail} alt="" />
+                                            <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
+                                            <img className='md:w-[180px] w-[120px] ml-5 ' src={item.thumbnail} alt="" />
 
                                         </div>
                                         <div className="">
@@ -196,6 +212,19 @@ const Shop = () => {
                                             <p className='flex text-yellow-500 gap-1'><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /> </p>
                                             <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                                             <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-[150px] '>Add to cart</button>
+                                            <ToastContainer
+                                                position="top-center"
+                                                autoClose={1000}
+                                                hideProgressBar={false}
+                                                newestOnTop={false}
+                                                closeOnClick={false}
+                                                rtl={false}
+                                                pauseOnFocusLoss
+                                                draggable
+                                                pauseOnHover
+                                                theme="light"
+                                                
+                                            />
 
                                         </div>
 
@@ -224,6 +253,19 @@ const Shop = () => {
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
 
                                 <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
+                                <ToastContainer
+                                    position="top-center"
+                                    autoClose={1000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick={false}
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                    theme="light"
+                                    
+                                />
 
                             </div>
 
