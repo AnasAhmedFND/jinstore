@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="">
           <div className="border rounded-md flex items-center justify-between ">
             <p className='text-xl px-2'><CiMail /></p>
-            <input className=' w-[65%] py-2 text-[14px] ' type="text" placeholder='Enter your email address' />
+            <input className=' w-[65%] py-2 text-[14px] outline-none ' type="text" placeholder='Enter your email address' />
             <button className='border rounded-r-md  w-[22%] py-2 bg-[#1d0947] text-white '>SEND</button>
           </div>
           <p className='text-[8px] font-bold '>By subscribing you agree to our Terms & Conditions and Privacy & Cookies Policy.</p>
