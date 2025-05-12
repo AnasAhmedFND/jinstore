@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { IoIosArrowForward } from "react-icons/io";
+
 import { apiData } from '../Context_API/ContextApi';
 import { TbCategoryPlus } from "react-icons/tb";
 import { FaRegSquare } from "react-icons/fa6";
@@ -11,6 +11,7 @@ import Inst from './shop_img/squer_icon.jpg'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../Slice_/cart_Slice';
 import { ToastContainer, toast } from 'react-toastify';
+import Dynamic_page from '../Dynamic_page';
 
 
 const Shop = () => {
@@ -69,9 +70,8 @@ const Shop = () => {
     return (
         <section className='container mx-auto border-t py-4 md:flex justify-between md:px-0 px-2 '>
             <div className="md:w-[30%]  ">
-                <div className="flex gap-4">
-                    <p className='flex items-center gap-2'>Home <IoIosArrowForward /></p>
-                    <p className='font-bold '>Shop</p>
+                <div className="">
+                    <Dynamic_page page='Shop' />
                 </div>
                 <h4 className='mt-4 font-bold '>Widget price filter</h4>
                 <div className="mt-2 ">

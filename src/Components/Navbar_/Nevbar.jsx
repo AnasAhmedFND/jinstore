@@ -37,7 +37,7 @@ const Nevbar = () => {
                     <p className='text-[10px] cursor-pointer '>Sign In <br /> <span className='font-bold '>Account</span> </p>
                     <div className="relative">
                     <p className='text-xl cursor-pointer '><FaRegHeart /></p>
-                    <p className='absolute bottom-[10px] left-[12px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center  '>1</p>
+                    <p className='absolute md:bottom-[10px] bottom-[18px] left-[12px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center  '>1</p>
 
                     </div>
                     <Link to='/cart' >

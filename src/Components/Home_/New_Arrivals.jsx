@@ -29,7 +29,9 @@ const New_Arrivals = () => {
 
   const hendeleAddCart = (product) => {
     dispatch(addToCart({ ...product, qty: 1 }))
-    toast.success('Added to cart')
+    toast.success ('Added to cart')
+    
+
   }
 
 
@@ -54,23 +56,25 @@ const New_Arrivals = () => {
                 <div className="flex justify-between">
                   <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                   <Link to={`Details_/${item.id}`} >
-                  <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
+                    <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
                   </Link>
                 </div>
                 <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                 <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
                 <ToastContainer
                   position="top-center"
-                  autoClose={1000}
+                  autoClose={5000}
                   hideProgressBar={false}
                   newestOnTop={false}
-                  closeOnClick
+                  closeOnClick={false}
                   rtl={false}
                   pauseOnFocusLoss
                   draggable
                   pauseOnHover
                   theme="light"
+                  
                 />
+
 
               </div>
 
@@ -88,13 +92,13 @@ const New_Arrivals = () => {
             <div className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
               <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
               <img className='w-[300px] ' src={item.thumbnail} alt="" />
-              
+
               <div className="flex justify-between">
-              <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-              
-              <Link to={`/Details_/${item.id}`} >
-              <button className='border px-2 bg-linear-60 from-blue-500 to-pink-500 text-white rounded-2xl cursor-pointer '>View </button>
-              </Link>
+                <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+
+                <Link to={`/Details_/${item.id}`} >
+                  <button className='border px-2 bg-linear-60 from-blue-500 to-pink-500 text-white rounded-2xl cursor-pointer '>View </button>
+                </Link>
 
               </div>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>

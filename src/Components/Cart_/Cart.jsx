@@ -8,6 +8,7 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { Link } from 'react-router-dom'
 import { SiShopee } from "react-icons/si";
 import { FaSackDollar } from "react-icons/fa6";
+import Dynamic_page from '../Dynamic_page';
 
 const Cart = () => {
   let info = useContext(apiData)
@@ -35,10 +36,8 @@ const Cart = () => {
 
   return (
     <section className='container mx-auto border-t px-2'>
-      <div className="flex w-[100px] justify-between items-center py-4 ">
-        <p>Home</p>
-        <p><IoIosArrowForward /></p>
-        <p className='font-bold '>Cart</p>
+      <div className="flex items-center ">
+        <Dynamic_page page='Cart' />
       </div>
 
       <div className=" md:flex justify-between  ">
