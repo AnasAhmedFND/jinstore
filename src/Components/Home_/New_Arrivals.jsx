@@ -53,7 +53,7 @@ const New_Arrivals = () => {
 
                 <div className="flex justify-between">
                   <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                  <Link to='/details' >
+                  <Link to={`Details_/${item.id}`} >
                   <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
                   </Link>
                 </div>
@@ -91,7 +91,10 @@ const New_Arrivals = () => {
               
               <div className="flex justify-between">
               <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+              
+              <Link to={`/Details_/${item.id}`} >
               <button className='border px-2 bg-linear-60 from-blue-500 to-pink-500 text-white rounded-2xl cursor-pointer '>View </button>
+              </Link>
 
               </div>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
