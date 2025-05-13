@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { apiData } from '../Context_API/ContextApi';
 import { ImCross } from "react-icons/im";
 import { useDispatch, useSelector } from 'react-redux';
-import { clearAllItems, deleteCartItem } from '../Slice_/cart_Slice';
+import { clearAllItems, deleteCartItem, dicrement, increment } from '../Slice_/cart_Slice';
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { Link } from 'react-router-dom'
 import { SiShopee } from "react-icons/si";
@@ -29,8 +29,25 @@ const Cart = () => {
     dispatch(clearAllItems())
   }
 
-  // Go to shop button .............................................................
+  // incriment plus .............................................................
+  let hendeleIncrement = (item) => {
+    dispatch(increment(item))
+    
+  }
 
+  // dicrement....................................................................
+  let hendeleDicrement = (item) => {
+    dispatch(dicrement(item))
+  }
+
+  // total price and qty ........................
+  let {totalPrice, totalQty} = cartData.reduce((acc, current) => {
+    acc.totalPrice += (current.price * current.qty);
+    acc.totalQty += current.qty;
+    return acc
+  }, {totalPrice: 0, totalQty: 0 } )
+
+   
 
 
 
@@ -60,12 +77,15 @@ const Cart = () => {
 
                   <div className="">
                     <h6 className='font-bold '>Quantity</h6>
-                    <p className='mt-4 border flex justify-between '> <span className='bg-[#706570c5] px-2 cursor-pointer '>-</span> <span className='bg-[#b0adc755] px-2 '>1 </span> <span className='bg-[#706570c5] px-2 cursor-pointer ' >+</span> </p>
+
+                    {/* incriment and dicriment .................................................*/}
+
+                    <p className='mt-4 border flex justify-between '> <span onClick={() => hendeleDicrement(index) } className='bg-[#706570c5] px-2 cursor-pointer '>-</span> <span className='bg-[#b0adc755] px-2 '>{item.qty} </span> <span onClick={() => hendeleIncrement(index) }className='bg-[#706570c5] px-2 cursor-pointer ' >+</span> </p>
                   </div>
 
                   <div className="">
                     <h5 className='font-bold '>Total</h5>
-                    <p className='mt-4 '>245</p>
+                    <p className='mt-4 '>{(item.qty * item.price).toFixed(2) } </p>
                   </div>
 
                 </div>
@@ -88,16 +108,22 @@ const Cart = () => {
           </div>
         }
 
-        <div className="border-2 border-dashed md:w-[35%] h-[200px] rounded-md  ">
+        <div className="border-2 border-dashed md:w-[35%] h-[280px] rounded-md  ">
           <p className='flex justify-center text-5xl py-4 text-red-500 '><FaSackDollar /></p>
 
-          <div className="flex gap-2 mt-[0px] font-bold text-2xl px-2 ">
+          <div className="flex gap-2 mt-[0px] font-bold justify-between px-2 border-b pb-2 text-xl  ">
             <h5 className=' text-green-500 '>Totall =</h5>
-            <p className='text-red-500'>$445</p>
+            <p className='text-red-500'>${totalPrice.toFixed(2) } </p>
           </div>
-          <div className="flex gap-2 font-bold text-2xl px-2 ">
-            <h5 className=' text-green-500'>Subtotall =</h5>
-            <p className='text-red-500'>$450</p>
+
+          <div className="flex gap-2  font-bold justify-between px-2 border-b pb-2 mt-4 text-xl  ">
+            <h5 className=' text-green-500 '>Subtotall =</h5>
+            <p className='text-red-500'>${(totalPrice+10).toFixed(2) } </p>
+          </div>
+
+          <div className="flex gap-2 font-bold px-2 border-b mt-4 pb-2 text-xl  justify-between">
+            <h5 className=' text-green-500'>totalQuantity =</h5>            
+            <p className='text-red-500'>${totalQty} </p>
           </div>
 
           <button className='bg-green-500 py-2 border rounded-md w-full text-white font-bold mt-[10px] cursor-pointer '>Bay Now</button>
