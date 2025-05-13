@@ -29,8 +29,7 @@ const New_Arrivals = () => {
 
   const hendeleAddCart = (product) => {
     dispatch(addToCart({ ...product, qty: 1 }))
-    toast.success ('Added to cart')
-    
+    toast.success('Added to cart')
 
   }
 
@@ -55,15 +54,16 @@ const New_Arrivals = () => {
 
                 <div className="flex justify-between">
                   <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                  <Link to={`Details_/${item.id}`} >
+                   <Link to={`Details_/${item.id}`} >
                     <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
                   </Link>
+                  
                 </div>
                 <p>Price: <span className='font-bold text-red-500 text-xl '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                 <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
                 <ToastContainer
                   position="top-center"
-                  autoClose={5000}
+                  autoClose={1000}
                   hideProgressBar={false}
                   newestOnTop={false}
                   closeOnClick={false}
@@ -74,6 +74,7 @@ const New_Arrivals = () => {
                   theme="light"
                   
                 />
+
 
 
               </div>
@@ -103,6 +104,7 @@ const New_Arrivals = () => {
               </div>
               <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
               <button onClick={() => hendeleAddCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full  '>Add to cart</button>
+
 
             </div>
 

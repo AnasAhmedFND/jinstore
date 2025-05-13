@@ -9,7 +9,6 @@ import Shops from './Pages/Shops';
 import Carts from './Pages/Carts';
 import Details_p from './Pages/Details_p';
 
-
 function App() {  
   let my_Router = createBrowserRouter(createRoutesFromElements (
     <Route element={<Routlayout />} >
@@ -17,8 +16,8 @@ function App() {
       <Route path='/about' element={<Abouts />} />
       <Route path='/shop' element={<Shops/> } />
       <Route path='/cart' element={<Carts/> } />
-      {/* <Route path='/details' element={<Details_p/>} /> */}
-      <Route path='/Details_/:id' element={<Details_p/>} />
+      <Route path='/Details/:id' element={Details_p} />    
+     
 
 
     </Route>
