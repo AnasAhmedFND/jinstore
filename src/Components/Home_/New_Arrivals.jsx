@@ -47,15 +47,15 @@ const New_Arrivals = () => {
 
         (
           <div className="flex flex-wrap justify-between gap-5">
-            {filter.map((item) => (
-              <div className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
+            {filter.map((item, index) => (
+              <div key={index} className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
 
                 <div className="flex justify-between">
                   <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
                    <Link to={`Details_/${item.id}`} >
-                    <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View </button>
+                    <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> View </button>
                   </Link>
                   
                 </div>
@@ -88,8 +88,8 @@ const New_Arrivals = () => {
         :
 
         (<div className="flex flex-wrap justify-between md:gap-5 gap-2 overflow-y-scroll h-[600px] ">
-          {info.map((item) => (
-            <div className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
+          {info.map((item, index) => (
+            <div key={index} className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
               <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
               <img className='w-[300px] ' src={item.thumbnail} alt="" />
 

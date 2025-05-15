@@ -12,6 +12,8 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../Slice_/cart_Slice';
 import { ToastContainer, toast } from 'react-toastify';
 import Dynamic_page from '../Dynamic_page';
+import { Link } from 'react-router-dom';
+import Banner from './shop_img/banner.jpg'
 
 
 const Shop = () => {
@@ -61,11 +63,6 @@ const Shop = () => {
         toast.success('Added to cart')
 
     }
-
-
-
-
-
 
     return (
         <section className='container mx-auto border-t py-4 md:flex justify-between md:px-0 px-2 '>
@@ -133,12 +130,18 @@ const Shop = () => {
             {/* Right........................................... */}
 
             <div className="md:w-[68%]   ">
-                <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md '>Only This Week</p>
-                <h2 className='font-bold mt-4 md:text-3xl text-2xl '>Grocery store with different <br /> treasures</h2>
-                <p className='mt-2'>We have prepared special discounts for you on grocery <br />
+                <div className="relative  py-5 ">
+                    
+                <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md  ml-2'>Only This Week</p>
+                <h2 className='font-bold mt-4 md:text-3xl text-2xl  ml-2'>Grocery store with different <br /> treasures</h2>
+                <p className='mt-2 ml-2'>We have prepared special discounts for you on grocery <br />
                     products...</p>
 
-                <button className='border px-5 py-2 rounded-full font-bold flex items-center gap-2 mt-4'>Shop Now <FaLongArrowAltRight /></button>
+                <button className='border px-5 py-2 rounded-full font-bold flex items-center gap-2 mt-4 ml-2'>Shop Now <FaLongArrowAltRight /></button>
+
+                <img className='absolute  top-0 -z-10  h-[266px] rounded-l-md' src={Banner} alt="" />                    
+
+                </div>
 
 
                 <div className="md:flex border justify-between py-2 px-2 items-center bg-linear-60 from-yellow-500 to-pink-500 mt-5 rounded-md">
@@ -171,7 +174,14 @@ const Shop = () => {
                                         <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                         <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                         <p className='font-bold '>{item.title} </p>
-                                        <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+
+                                        <div className="flex justify-between py-2">
+                                            <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                                            <Link to={`Details_/${item.id}`} >
+                                                <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View</button>
+                                            </Link>
+                                        </div>
+
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                                         <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart </button>
                                         <ToastContainer
@@ -223,10 +233,13 @@ const Shop = () => {
                                                 draggable
                                                 pauseOnHover
                                                 theme="light"
-                                                
+
                                             />
 
                                         </div>
+                                        <Link to={`Details_/${item.id} `} >
+                                            <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>view</button>
+                                        </Link>
 
                                     </div>
 
@@ -249,7 +262,12 @@ const Shop = () => {
                                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>-41%</p>
                                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
                                 <p className='font-bold '>{item.title} </p>
-                                <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                                <div className="flex justify-between py-2 items-center">
+                                    <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                                    <Link to={`Details_/${item.id} `} >
+                                        <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> view</button>
+                                    </Link>
+                                </div>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
 
                                 <button onClick={() => hendeleAddToCart(item)} className='border rounded-full py-1 px-2 mt-2 cursor-pointer w-full '>Add to cart</button>
@@ -264,7 +282,7 @@ const Shop = () => {
                                     draggable
                                     pauseOnHover
                                     theme="light"
-                                    
+
                                 />
 
                             </div>
