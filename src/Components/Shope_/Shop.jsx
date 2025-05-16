@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../Slice_/cart_Slice';
 import { ToastContainer, toast } from 'react-toastify';
 import Dynamic_page from '../Dynamic_page';
-import { Link } from 'react-router-dom';
+
 import Banner from './shop_img/banner.jpg'
 
 
@@ -164,6 +164,8 @@ const Shop = () => {
                 (short-circuit Evaluation && ) ....................*/ }
 
                 {category.length === 0 ?
+
+                
                     <div className="">
 
                         {squer === 'squer' &&
@@ -177,9 +179,10 @@ const Shop = () => {
 
                                         <div className="flex justify-between py-2">
                                             <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                                            <Link to={`Details_/${item.id}`} >
-                                                <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>View</button>
-                                            </Link>
+                                           
+                                                <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> View </button>
+                                            
+                                            
                                         </div>
 
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
@@ -237,9 +240,9 @@ const Shop = () => {
                                             />
 
                                         </div>
-                                        <Link to={`Details_/${item.id} `} >
+                                      
                                             <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>view</button>
-                                        </Link>
+                                        
 
                                     </div>
 
@@ -264,9 +267,9 @@ const Shop = () => {
                                 <p className='font-bold '>{item.title} </p>
                                 <div className="flex justify-between py-2 items-center">
                                     <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                                    <Link to={`Details_/${item.id} `} >
+                                    
                                         <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> view</button>
-                                    </Link>
+                                    
                                 </div>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
 

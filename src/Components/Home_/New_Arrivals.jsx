@@ -33,9 +33,6 @@ const New_Arrivals = () => {
 
   }
 
-
-
-
   return (
     <section className='container mx-auto  pb-10  md:px-0 px-2 '>
       <div className="md:flex justify-between pb-4  ">
@@ -43,7 +40,7 @@ const New_Arrivals = () => {
         <button onClick={viewAllData} className='font-bold border rounded-full px-2 flex gap-2 items-center py-1 shadow-lg cursor-pointer'>View All <FaLongArrowAltRight /></button>
       </div>
 
-      {view ?
+      {view ?      
 
         (
           <div className="flex flex-wrap justify-between gap-5">
