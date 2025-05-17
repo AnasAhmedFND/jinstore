@@ -9,6 +9,7 @@ import Shops from './Pages/Shops';
 import Carts from './Pages/Carts';
 import Details_p from './Pages/Details_p';
 import Blog_p from './Pages/Blog_p';
+import N_Found_p from './Pages/N_Found_p';
 
 function App() {  
   let my_Router = createBrowserRouter(createRoutesFromElements (
@@ -18,7 +19,8 @@ function App() {
       <Route path='/shop' element={<Shops/> } />
       <Route path='/cart' element={<Carts/> } />
       <Route path='/Details_/:id' element={<Details_p /> } />
-      <Route path='/blog' element={<Blog_p />} />      
+      <Route path='/blog' element={<Blog_p />} />  
+      <Route path='*' element={<N_Found_p />} />    
 
 
     </Route>
