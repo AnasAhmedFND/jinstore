@@ -10,7 +10,7 @@ import Act from './img_home/648.png'
 import Firesmith from './img_home/656.png'
 import Box from './img_home/641.png'
 import Babyfood from './img_home/babyfood.jpg'
-import Cupcak from './img_home/Cupcac.jpg'
+import Cupcak from './img_home/cupcac.jpg'
 import Persent from './img_home/persent.png'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import MyVideo from './video/free-video.mp4'
