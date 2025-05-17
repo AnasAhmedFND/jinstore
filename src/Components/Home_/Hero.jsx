@@ -9,6 +9,7 @@ import { apiData } from '../Context_API/ContextApi';
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Slice_/cart_Slice';
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -117,7 +118,12 @@ const Hero = () => {
                 <p className='bg-red-500 w-[30px] h-[20px] rounded-md absolute top-5 flex justify-center items-center text-sm text-white '>41%</p>
                 <img className='w-[200px] ' src={item.thumbnail} alt="" />
                 <p className='font-bold '> </p>
+                <div className="flex justify-between">
                 <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
+                <Link to={`Details_/${item.id}`} >
+                <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> View </button>
+                </Link>
+                </div>
                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
                 <button onClick={() => hendeleAddToCart(item) } className='border rounded-full py-1 px-2 mt-2 w-full '>Add to cart</button>
 

@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Dynamic_page from '../Dynamic_page';
 
 import Banner from './shop_img/banner.jpg'
+import { Link } from 'react-router-dom';
 
 
 const Shop = () => {
@@ -131,15 +132,15 @@ const Shop = () => {
 
             <div className="md:w-[68%]   ">
                 <div className="relative  py-5 ">
-                    
-                <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md  ml-2'>Only This Week</p>
-                <h2 className='font-bold mt-4 md:text-3xl text-2xl  ml-2'>Grocery store with different <br /> treasures</h2>
-                <p className='mt-2 ml-2'>We have prepared special discounts for you on grocery <br />
-                    products...</p>
 
-                <button className='border px-5 py-2 rounded-full font-bold flex items-center gap-2 mt-4 ml-2'>Shop Now <FaLongArrowAltRight /></button>
+                    <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md  ml-2'>Only This Week</p>
+                    <h2 className='font-bold mt-4 md:text-3xl text-2xl  ml-2'>Grocery store with different <br /> treasures</h2>
+                    <p className='mt-2 ml-2'>We have prepared special discounts for you on grocery <br />
+                        products...</p>
 
-                <img className='absolute  top-0 -z-10  h-[266px] rounded-l-md' src={Banner} alt="" />                    
+                    <button className='border px-5 py-2 rounded-full font-bold flex items-center gap-2 mt-4 ml-2'>Shop Now <FaLongArrowAltRight /></button>
+
+                    <img className='absolute  top-0 -z-10  h-[266px] rounded-l-md' src={Banner} alt="" />
 
                 </div>
 
@@ -165,7 +166,7 @@ const Shop = () => {
 
                 {category.length === 0 ?
 
-                
+
                     <div className="">
 
                         {squer === 'squer' &&
@@ -179,10 +180,9 @@ const Shop = () => {
 
                                         <div className="flex justify-between py-2">
                                             <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                                           
+                                            
                                                 <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> View </button>
-                                            
-                                            
+                                           
                                         </div>
 
                                         <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
@@ -240,9 +240,9 @@ const Shop = () => {
                                             />
 
                                         </div>
-                                      
-                                            <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>view</button>
-                                        
+
+                                        <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '>view</button>
+
 
                                     </div>
 
@@ -267,9 +267,9 @@ const Shop = () => {
                                 <p className='font-bold '>{item.title} </p>
                                 <div className="flex justify-between py-2 items-center">
                                     <p className=''> <span className='font-bold '>id:</span> {item.id} </p>
-                                    
-                                        <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> view</button>
-                                    
+
+                                    <button className='border px-2 bg-linear-90 from-blue-500 to-red-500 text-white rounded-2xl cursor-pointer '> view</button>
+
                                 </div>
                                 <p>Price: <span className='font-bold text-red-500  '>${item.price} </span>  <span className='line-through '>  $ {item.discountPercentage} </span> </p>
 
