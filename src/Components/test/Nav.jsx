@@ -5,9 +5,9 @@ const Nav = () => {
     <section>
         <nav className='border-t-4'>
             <ul className='flex justify-center gap-5 py-5 border rounded-sm bg-[#37486455] '>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a href="#">Home</a> </li>
+            <li><a href="#">About</a> </li>
+            <li><a href="#">Contact</a> </li>
         </ul>
 
         </nav>
