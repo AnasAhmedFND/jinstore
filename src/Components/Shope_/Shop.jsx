@@ -130,7 +130,7 @@ const Shop = () => {
 
             {/* Right........................................... */}
 
-            <div className="md:w-[68%]   ">
+            <div className="md:w-[68%]  ">
                 <div className="relative  py-5 ">
 
                     <p className='text-red-500 bg-[#f3b968be] w-[120px] text-center rounded-md  ml-2'>Only This Week</p>
@@ -144,6 +144,7 @@ const Shop = () => {
 
                 </div>
 
+                <div className="">
 
                 <div className="md:flex border justify-between py-2 px-2 items-center bg-linear-60 from-yellow-500 to-pink-500 mt-5 rounded-md">
                     <div className="flex md:gap-10 items-center  gap-7  ">
@@ -294,6 +295,10 @@ const Shop = () => {
                     </div>
 
                 }
+                </div>
+
+
+
 
 
             </div>

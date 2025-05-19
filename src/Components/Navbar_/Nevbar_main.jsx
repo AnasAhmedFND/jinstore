@@ -15,9 +15,13 @@ const Nevbar_main = () => {
                             <option value="home_3">Home_3</option>
                         </select></Link>
                     </li>
-                    <li className='cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '><Link to='/shop' >Shop</Link> </li>
+                    <Link to='/shop' >
+                    <li className='cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '>  Shop </li>
+                    </Link>
 
-                    <li className='cursor-pointer  md:border-b-0 border-b-2 md:pb-0 pb-1 '><Link to='/test' >Fruits & Vegetables </Link></li>
+                    <Link to='/test' >
+                    <li className='cursor-pointer  md:border-b-0 border-b-2 md:pb-0 pb-1 '>Fruits & Vegetables </li></Link>
+                    
                     <li className='cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '>Beverages</li>
                     <Link to='blog' >
                         <li className='cursor-pointer  md:border-b-0 border-b-2 md:pb-0 pb-1 '>Blog</li>
