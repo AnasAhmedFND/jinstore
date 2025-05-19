@@ -19,13 +19,14 @@ const Wish_list = () => {
         dispatch(deleteWishItem(index))
 
     }
-    
-     
+
+    // total quantity.......................................
+   const totalQtyItems = wishData.reduce((total, item) => total + item.qty, 0);
 
 
     return (
-        <section className='container mx-auto border py-10'>
-            <h2 className='font-bold text-xl '>Wish(10) </h2>
+        <section className='container mx-auto  pb-10'>
+            <h2 className='font-bold text-xl py-2 '>Wish({totalQtyItems} ) </h2>
             <div className="flex flex-wrap gap-4">
                 {wishData.map((item, index) => (
                 <div key={index} className="border rounded-md w-[300px]  text-center relative pt-2">

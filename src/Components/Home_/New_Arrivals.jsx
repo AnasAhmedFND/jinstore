@@ -38,6 +38,7 @@ const New_Arrivals = () => {
   
   const hendeleAddWish = (items) => {
     dispatch(addToWish({ ...items, qty: 1}) )
+     toast.success('Added to wish')
   }
 
   return (
@@ -56,6 +57,19 @@ const New_Arrivals = () => {
                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
 
                 <p onClick={() => hendeleAddWish(item)} className='absolute md:left-[190px] left-[120px] top-[20px] border w-[25px] md:w-[30px] h-[25px] md:h-[30px] rounded-full flex justify-center items-center text-lg bg-[#f5f] text-white cursor-pointer '><FaRegHeart /></p>
+                <ToastContainer
+                  position="top-center"
+                  autoClose={1000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick={false}
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  
+                />
 
                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
 
@@ -98,7 +112,20 @@ const New_Arrivals = () => {
           {info.map((item, index) => (
             <div key={index} className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
               <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
-               <p className='absolute md:left-[140px] left-[120px] top-[20px] border w-[25px] md:w-[30px] h-[25px] md:h-[30px] rounded-full flex justify-center items-center text-lg bg-[#f5f] text-white cursor-pointer '><FaRegHeart /></p>
+               <p onClick={() => hendeleAddWish(item)} className='absolute md:left-[140px] left-[120px] top-[18px] border w-[25px] md:w-[30px] h-[25px] md:h-[30px] rounded-full flex justify-center items-center text-lg bg-[#f5f] text-white cursor-pointer '><FaRegHeart /></p>
+               <ToastContainer
+                  position="top-center"
+                  autoClose={1000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick={false}
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  
+                />
               <img className='w-[300px] ' src={item.thumbnail} alt="" />
 
               <div className="flex justify-between">

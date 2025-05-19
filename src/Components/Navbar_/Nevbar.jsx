@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 const Nevbar = () => {
     // Show Cart items value.....................................................
     let cartItemsValue = useSelector((state) => state.cartItemSlice.cartItems)
+
+    let wishItemValue = useSelector((state) => state.wishItemSlice.wishItem )
     
     
     return (
@@ -39,7 +41,7 @@ const Nevbar = () => {
                     <Link to='/wish' >
                     <div className="relative">
                     <p className='text-xl cursor-pointer '><FaRegHeart /></p>
-                    <p className='absolute md:bottom-[10px] bottom-[18px] left-[12px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center  '>1</p>
+                    <p className='absolute md:bottom-[10px] bottom-[18px] left-[12px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center  '>{wishItemValue.length } </p>
 
                     </div>
                     </Link>
