@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Nevbar_main = () => {
     return (
         <section className='container mx-auto  py-4  '>
-            <div className="md:flex justify-between  md:border-t-0 border-t md:bg-white bg-yellow-500 md:w-full w-[60%] md:px-0 px-2 md:pb-0 pb-4">
-                <ul className='md:flex items-center md:gap-0  w-[55%] justify-between font-bold  '>
-                    <li className=' cursor-pointer  '>
+            <div className="md:flex justify-between  md:border-t-0 border-t md:bg-white bg-yellow-500 md:w-full w-[70%] md:px-0 px-2 md:pb-0 pb-4  ">
+                <ul className='md:flex items-center md:gap-0  w-full justify-between font-bold   '>
+                    <li className=' cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '>
                         <Link to='/' >  <select className='outline-none items-center cursor-pointer position relative md:right-0 right-1 md:w-[80px] w-[200px] ' name="page" id="home">
 
                             <option className='' value="home">  Home  </option>
@@ -15,12 +15,12 @@ const Nevbar_main = () => {
                             <option value="home_3">Home_3</option>
                         </select></Link>
                     </li>
-                    <li className='cursor-pointer '><Link to='/shop' >Shop</Link> </li>
+                    <li className='cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '><Link to='/shop' >Shop</Link> </li>
 
-                    <li className='cursor-pointer '><Link to='/test' >Fruits & Vegetables </Link></li>
-                    <li className='cursor-pointer '>Beverages</li>
+                    <li className='cursor-pointer  md:border-b-0 border-b-2 md:pb-0 pb-1 '><Link to='/test' >Fruits & Vegetables </Link></li>
+                    <li className='cursor-pointer md:border-b-0 border-b-2 md:pb-0 pb-1  '>Beverages</li>
                     <Link to='blog' >
-                        <li className='cursor-pointer '>Blog</li>
+                        <li className='cursor-pointer  md:border-b-0 border-b-2 md:pb-0 pb-1 '>Blog</li>
                     </Link>
                     <li className='cursor-pointer '>Contact</li>
 
