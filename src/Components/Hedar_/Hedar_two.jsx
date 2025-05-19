@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Hedar_two = () => {
   return (
-    <section className='border-b py-2'>
+    <section className='border-b py-2 md:block hidden'>
         <div className="container mx-auto md:text-[12px] text-[10px]  md:flex justify-between md:pl-0 pl-2  ">
             <ul className='flex md:gap-5 items-center '>
                 <li><Link to='about' >About Us</Link> </li>
