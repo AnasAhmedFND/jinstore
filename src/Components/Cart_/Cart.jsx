@@ -16,6 +16,8 @@ const Cart = () => {
   // add to cart system............................................................
   let cartData = useSelector((state) => state.cartItemSlice.cartItems)
 
+   
+
   // Delete cart item..............................................................
   const dispatch = useDispatch()
 

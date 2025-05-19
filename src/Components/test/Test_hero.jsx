@@ -3,7 +3,7 @@ import Hero from './img_test/hero.jpg'
 
 const Test_hero = () => {
   return (
-    <section>
+    <section className=' '>
         <img className='w-full h-[200px] ' src={Hero} alt="" />
     </section>
   )

@@ -35,11 +35,15 @@ const Nevbar = () => {
                 <div className="flex gap-4 md:items-center md:mt-0 mt-2 justify-between  ">
                     <p className='text-2xl cursor-pointer '><IoMdContact /></p>
                     <p className='text-[10px] cursor-pointer '>Sign In <br /> <span className='font-bold '>Account</span> </p>
+
+                    <Link to='/wish' >
                     <div className="relative">
                     <p className='text-xl cursor-pointer '><FaRegHeart /></p>
                     <p className='absolute md:bottom-[10px] bottom-[18px] left-[12px] w-[20px] h-[20px] bg-red-500 border rounded-full text-white  flex justify-center items-center  '>1</p>
 
                     </div>
+                    </Link>
+
                     <Link to='/cart' >
                     <div className="relative ">
                     <p className='text-xl cursor-pointer '><TbShoppingCartCancel /></p>

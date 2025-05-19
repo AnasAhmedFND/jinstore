@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../Slice_/cart_Slice';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { FaRegHeart } from "react-icons/fa6";
+import { addToWish } from '../Slice_/wish_Slice';
 
 
 
@@ -32,6 +34,11 @@ const New_Arrivals = () => {
     toast.success('Added to cart')
 
   }
+  // add to wihs items...........................................
+  
+  const hendeleAddWish = (items) => {
+    dispatch(addToWish({ ...items, qty: 1}) )
+  }
 
   return (
     <section className='container mx-auto  pb-10  md:px-0 px-2 '>
@@ -47,6 +54,9 @@ const New_Arrivals = () => {
             {filter.map((item, index) => (
               <div key={index} className="border md:w-[230px] w-[160px] p-2 relative rounded-xl">
                 <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
+
+                <p onClick={() => hendeleAddWish(item)} className='absolute md:left-[190px] left-[120px] top-[20px] border w-[25px] md:w-[30px] h-[25px] md:h-[30px] rounded-full flex justify-center items-center text-lg bg-[#f5f] text-white cursor-pointer '><FaRegHeart /></p>
+
                 <img className='w-[300px] ' src={item.thumbnail} alt="" />
 
                 <div className="flex justify-between">
@@ -88,6 +98,7 @@ const New_Arrivals = () => {
           {info.map((item, index) => (
             <div key={index} className="border md:w-[180px] w-[158px]  p-2 relative rounded-xl">
               <p className='bg-red-500 w-[40px] h-[30px] rounded-md absolute top-5 flex justify-center items-center  text-white '>41%</p>
+               <p className='absolute md:left-[140px] left-[120px] top-[20px] border w-[25px] md:w-[30px] h-[25px] md:h-[30px] rounded-full flex justify-center items-center text-lg bg-[#f5f] text-white cursor-pointer '><FaRegHeart /></p>
               <img className='w-[300px] ' src={item.thumbnail} alt="" />
 
               <div className="flex justify-between">
