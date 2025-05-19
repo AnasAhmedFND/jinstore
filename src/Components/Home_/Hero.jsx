@@ -111,10 +111,10 @@ const Hero = () => {
                        
           :
 
-          <div className="flex flex-wrap overflow-y-scroll h-[300px] gap-2 py-2">
+          <div className="flex flex-wrap md:col-span-4 justify-between col-span-2 overflow-y-scroll h-[500px] gap-2 py-2">
 
             {categoryItems.map((item) => (
-              <div className="border w-[200px] p-2 relative rounded-xl">
+              <div className="border md:w-[200px] w-[165px] p-2 relative rounded-xl">
                 <p className='bg-red-500 w-[30px] h-[20px] rounded-md absolute top-5 flex justify-center items-center text-sm text-white '>41%</p>
                 <img className='w-[200px] ' src={item.thumbnail} alt="" />
                 <p className='font-bold '> </p>
