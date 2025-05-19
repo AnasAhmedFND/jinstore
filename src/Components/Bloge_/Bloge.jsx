@@ -11,8 +11,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Bloge = () => {
     return (
-        <section className='container mx-auto flex justify-between'>
-            <div className="w-[68%] ">
+        <section className='container mx-auto md:flex justify-between md:px-0 px-2'>
+            <div className=" md:w-[68%] ">
                 <div className="  pb-4">
                     <img src={B1} alt="" />
                     <h3 className='font-bold text-2xl'>How grocers are approaching delivery as the market <br /> evolves </h3>
@@ -45,7 +45,7 @@ const Bloge = () => {
 
             </div>
 
-            <div className="w-[30%] ">
+            <div className=" md:w-[30%] ">
                 <h4 className='font-bold text-lg '>Blog Post List</h4>
 
                 <div className="flex gap-5 mt-4 " >
