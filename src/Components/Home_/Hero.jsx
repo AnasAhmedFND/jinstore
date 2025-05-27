@@ -53,7 +53,7 @@ const Hero = () => {
 
 
   return (
-    <section className='container mx-auto md:flex  justify-between  border md:px-0 px-2 '>
+    <section className='container mx-auto md:flex  justify-between border md:mt-4'>
       <div className=" md:w-[28%] ">
         <div onClick={hendeleCategory} className="flex justify-between h-[30px] border-b items-center px-2 cursor-pointer ">
           <div className="flex items-center gap-2 font-bold ">
